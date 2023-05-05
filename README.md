@@ -9,7 +9,7 @@
   4.teaches  
   5.department  
   v 6.section  
-  7.course  
+  v 7.course  
   v 8.classroom  
   9.time_slot  
   
