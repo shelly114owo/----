@@ -44,6 +44,9 @@ section::after {
 				<li class="nav-item">
 					<a class="nav-link" data-bs-toggle="tab" href="#canchoose">可選課表</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-bs-toggle="tab" href="#studlogin">登入</a>
+				</li>
 			</ul>
 
 			<div class="tab-content mt-3">
@@ -75,32 +78,19 @@ section::after {
 					<input type="submit" value="送出">
 					</form>
 				</div>
+				<div id="studlogin" class="tab-pane fade mb-4">
+					<form name="form1" method="post" action="login.php" >
+					Student ID：<input name="student_id">
+					<input type="submit" value="送出">
+					</form>
+				</div>				
 			</div>
 		</div>
 		</section>	
 	</div>
-
 </body>
-
 </html>
 
 
 
-<?php
-	if(isset($_POST['MyHead'])) {
-		$MyHead=$_POST["MyHead"];
-	
-		$dbhost = '127.0.0.1';
-		$dbuser = 'hj';
-		$dbpass = 'test1234';
-		$dbname = 'testdb';
-		$conn = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');
-		mysql_query("SET NAMES 'utf8'");
-		mysql_select_db($dbname);
-		$sql = "SELECT description FROM people where name LIKE \"".$MyHead."%\";";
-		$result = mysql_query($sql) or die('MySQL query error');
-		while($row = mysql_fetch_array($result)){
-			echo $row['stud_id']."<p>";
-		}
-	}
-?>
+
