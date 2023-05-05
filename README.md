@@ -7,11 +7,11 @@
   v 2.takes  
   3.instructor  
   4.teaches  
-  5.department  
+  ? 5.department...(建得非常神奇)  
   v 6.section  
   v 7.course  
   v 8.classroom  
-  9.time_slot  
+  ? 9.time_slot...(不確定time_slot_id要用哪種)  
   
 二、設計網站  
 ==========[查詢]==========
