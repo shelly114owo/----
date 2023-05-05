@@ -5,8 +5,8 @@
 一、建置資料庫  
   v 1.student  
   v 2.takes  
-  3.instructor  
-  4.teaches  
+  v3.instructor  (系所要再確認)
+  v4.teaches  
   ? 5.department...(建得非常神奇)  
   v 6.section  
   v 7.course  
