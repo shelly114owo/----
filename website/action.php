@@ -15,16 +15,16 @@
 		$result = mysqli_query($conn, $sql) or die('MySQL query error');
 		$sql_1 = "SELECT stud_id ,stud_name	,dept_name ,tot_cred FROM student_table where stud_id LIKE \"".$MyHead."%\";";
 		$result_1 = mysqli_query($conn, $sql_1) or die('MySQL query error');
-		echo "<p>學號、名字、部別、總學分</p>";
+		echo "<table style='width: 30%' border='1'><tr><th height='30'>學號</th><th height='30'>名字</th><th height='30'>部別</th><th height='30'>總學分</th>";
 		if($row_1 = mysqli_fetch_array($result_1)){
-			echo "<table>","<thead>","<tr>",$row_1['stud_id']," ",$row_1['stud_name']," ",$row_1['dept_name']," ",$row_1['tot_cred']."<p>";
+			echo "<tr>","<td height='30'>",$row_1['stud_id'],"</td>","<td height='30'>"," ",$row_1['stud_name'],"</td>","<td height='30'>"," ",$row_1['dept_name'],"</td>","<td height='30'>"," ",$row_1['tot_cred'],"</td>"."<p>";
 		}
-		echo "<p>課號、課程名稱、開課系所、年級、必/選修別、目前選修人數、修課人數上限、開課時段</p>";
+		echo "<table style='width: 70%' border='1'><tr><th height='30'>加/退選</th><th height='30'>課號</th><th>課程名稱</th><th>開課系所</th><th>年級</th><th>必/選修別</th><th>目前選修人數</th><th>修課人數上限</th><th>開課時段</th></tr>";
 		while($row = mysqli_fetch_array($result)){
 			if($row['category'] == "必修")
-				echo "<table>","<thead>","<tr>","<button type='button' action='action1.php'>申請</button>","<tr>"," ",$row['course_id'],"<tr>","	",$row['title'],"<tr>"," ",$row['dept_name'],"<tr>"," ",$row['grade'],"<tr>"," ",$row['category'],"<tr>"," ",$row['now_people'],"<tr>"," ",$row['max_people']."<p>";
+				echo "<tr>","<td height='30'>","<form name='form1' method='post' action='minus.php'><input type='submit' value='申請' name='MyHead'></form>","</td>","<td height='30'>"," ",$row['course_id'],"</td>","<td height='30'>","	",$row['title'],"</td>","<td height='30'>"," ",$row['dept_name'],"</td>","<td height='30'>"," ",$row['grade'],"</td>","<td height='30'>"," ",$row['category'],"</td>","<td height='30'>"," ",$row['now_people'],"</td>","<td height='30'>"," ",$row['max_people'],"</td>"."<p>";
 			else
-				echo "<table>","<thead>","<tr>","<button type='button' action='action1.php'>退選</button>","<tr>"," ",$row['course_id'],"<tr>","	",$row['title'],"<tr>"," ",$row['dept_name'],"<tr>"," ",$row['grade'],"<tr>"," ",$row['category'],"<tr>"," ",$row['now_people'],"<tr>"," ",$row['max_people']."<p>";
+				echo "<tr>","<td height='30'>","<form name='form1' method='post' action='minus.php'><input type='submit' value='退選' name='MyHead'></form>","</td>","<td height='30'>"," ",$row['course_id'],"</td>","<td height='30'>","	",$row['title'],"</td>","<td height='30'>"," ",$row['dept_name'],"</td>","<td height='30'>"," ",$row['grade'],"</td>","<td height='30'>"," ",$row['category'],"</td>","<td height='30'>"," ",$row['now_people'],"</td>","<td height='30'>"," ",$row['max_people'],"</td>"."<p>";
 		}
 	}
 ?>
