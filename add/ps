@@ -1,2 +1,4 @@
-add 是判斷衝堂、人數、課程名稱的版本
-action1 是之前的 $sql 有誤，所以更改後的版本
+add: 判斷衝堂、人數、課程名稱的版本
+  section_table記得換成新的
+  
+action1: 之前action1的 $sql 有誤，所以更改後的版本
