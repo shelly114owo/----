@@ -1,5 +1,6 @@
 <a href = "index.php">回到首頁</a> <p>
-<a href = "/action.php">回到上一頁</a> <p>
+<a href = "JavaScript:history.back(-1)">回到上一頁</a> <p>
+
 <?php
 	if(isset($_GET['m'])) {
 		$MyHead=$_GET['m'];
@@ -16,7 +17,6 @@
 		$result = mysqli_query($conn, $sql) or die('MySQL query error');
 		$num=0;
 		$minus='';
-		$minus_num = 0;
 		while($row = mysqli_fetch_array($result)){
 			if($num==$index)
 			{
@@ -26,6 +26,8 @@
 			$num++;
 		}
 		$sql_3 = "UPDATE student_table SET tot_cred = tot_cred - (SELECT credits FROM course_table INNER JOIN takes_table ON course_table.course_id = takes_table.course_id WHERE course_table.course_id = ".$minus." AND stud_id LIKE \"".$MyHead."%\") WHERE stud_id LIKE \"".$MyHead."%\";";
+		mysqli_query($conn, $sql_3);
+		$sql_3 = "UPDATE course_table SET now_people = now_people - 1 WHERE course_id = ".$minus.";";
 		mysqli_query($conn, $sql_3);
 		$sql_3 = "DELETE FROM takes_table WHERE course_id = ".$minus." AND stud_id LIKE \"".$MyHead."%\";";
 		mysqli_query($conn, $sql_3);
