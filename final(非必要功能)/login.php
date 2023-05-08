@@ -13,7 +13,7 @@
 		$dbhost = '127.0.0.1';
 		$dbuser = 'hj';
 		$dbpass = 'test1234';
-		$dbname = 'new';
+		$dbname = 'testdb';
 		$conn = mysqli_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');
 		mysqli_query($conn, "SET NAMES 'utf8'");
 		mysqli_select_db($conn, $dbname);
@@ -50,7 +50,7 @@
 						if($day[$i]=="(一)") {
 							for ($j=$begin[$i]; $j<=$finish[$i]; $j++) {   
 								if($course[$j][1] != " ")
-									$course[$j][1] = $course[$j][1]." ".$row['course_id'];
+									$course[$j][1] = $course[$j][1]."<br>".$row['course_id'];
 								else
 									$course[$j][1] = $row['course_id'];
 							}
@@ -58,7 +58,7 @@
 						else if($day[$i]=="(二)") {
 							for ($j=$begin[$i]; $j<=$finish[$i]; $j++) {   
 								if($course[$j][2] != " ")
-									$course[$j][2] = $course[$j][2]." ".$row['course_id'];
+									$course[$j][2] = $course[$j][2]."<br>".$row['course_id'];
 								else
 									$course[$j][2] = $row['course_id'];
 							}
@@ -66,7 +66,7 @@
 						else if($day[$i]=="(三)") {
 							for ($j=$begin[$i]; $j<=$finish[$i]; $j++) {   
 								if($course[$j][3] != " ")
-									$course[$j][3] = $course[$j][3]." ".$row['course_id'];
+									$course[$j][3] = $course[$j][3]."<br>".$row['course_id'];
 								else
 									$course[$j][3] = $row['course_id'];
 							}
@@ -82,7 +82,7 @@
 						else if($day[$i]=="(五)") {
 							for ($j=$begin[$i]; $j<=$finish[$i]; $j++) {   
 								if($course[$j][5] != " ")
-									$course[$j][5] = $course[$j][5]." ".$row['course_id'];
+									$course[$j][5] = $course[$j][5]."<br>".$row['course_id'];
 								else
 									$course[$j][5] = $row['course_id'];
 							}
@@ -90,7 +90,7 @@
 						else if($day[$i]=="(六)") {
 							for ($j=$begin[$i]; $j<=$finish[$i]; $j++) {   
 								if($course[$j][6] != " ")
-									$course[$j][6] = $course[$j][6]." ".$row['course_id'];
+									$course[$j][6] = $course[$j][6]."<br>".$row['course_id'];
 								else
 									$course[$j][6] = $row['course_id'];
 							}
@@ -98,7 +98,7 @@
 						else if($day[$i]=="(日)") {
 							for ($j=$begin[$i]; $j<=$finish[$i]; $j++) {   
 								if($course[$j][7] != " ")
-									$course[$j][7] = $course[$j][7]." ".$row['course_id'];
+									$course[$j][7] = $course[$j][7]."<br>".$row['course_id'];
 								else
 									$course[$j][7] = $row['course_id'];
 							}
