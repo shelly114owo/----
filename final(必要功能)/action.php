@@ -11,10 +11,6 @@
     </style>
 
 <?php
-		function myFunction() {
-			$student = document.getElementsByName('myHead');
-			$dstudent.submit();
-		}
 	if(isset($_POST["MyHead"])) {
 		$MyHead=$_POST["MyHead"];
 	
