@@ -43,13 +43,20 @@
 				echo "<tr>","<td height='30'>","<a type='button' href='minus.php?m=$MyHead&n=$num'>退選</a>","</td>","<td height='30'>"," ",$row['course_id'],"</td>","<td height='30'>","	",$row['title'],"</td>","<td height='30'>"," ",$row['dept_name'],"</td>","<td height='30'>"," ",$row['grade'],"</td>","<td height='30'>"," ",$row['category'],"</td>","<td height='30'>"," ",$row['now_people'],"</td>","<td height='30'>"," ",$row['max_people'],"</td>"."<p>";
 			}
 			$num++;
-			$sql_2 = "SELECT time_slot_id FROM section_table WHERE sec_id = ".$row['course_id'].";";
-			$result_2 = mysqli_query($conn, $sql_2) or die('MySQL query error');
+			$sql_2 = "SELECT * FROM time_slot_table INNER JOIN section_table ON time_slot_table.time_slot_id = section_table.time_slot_id WHERE sec_id = ".$row['course_id'].";";
+			$result_2 = mysqli_query($conn, $sql_2) or die ('MySQL query error');
 			// $row_2 = mysqli_fetch_array($result_2);
 			// echo "<td height='30'>"," ",$row_2['time_slot_id'],"</td><p>";
 			echo "<td height='30'>";
 			while($row_2 = mysqli_fetch_array($result_2)){
-				echo $row_2['time_slot_id'];
+				if( $row_2['start_time']==$row_2['end_time'])
+				{
+					echo $row_2['day'], $row_2['start_time'];
+				}
+				else
+				{
+					echo $row_2['day'], $row_2['start_time'],"-",$row_2['end_time'];
+				}
 			}
 			echo "</td><p>";
 		}
