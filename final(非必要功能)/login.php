@@ -41,8 +41,8 @@
 				$i = 0;
 				while($row_time = mysqli_fetch_array($result_time)){
 					$day[$i] = $row_time['day'];
-					$begin[$i] = $row_time['start_time'];
-					$finish[$i] = $row_time['end_time'];	
+					$begin[$i] = $row_time['start_time']/1;
+					$finish[$i] = $row_time['end_time']/1;	
 					$i++;
 				}$count = $i;
 				$i = 0;
