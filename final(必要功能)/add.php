@@ -1,4 +1,10 @@
 <a href = "login_new.php">回到首頁</a> <p>
+    <style>
+        th{
+            /* border-style: ; */
+            background-color: lightsteelblue;
+        }
+    </style>
 <?php
 	if(isset($_GET['m'])) {
 		$MyHead=$_GET['m'];
