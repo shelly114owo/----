@@ -26,7 +26,7 @@
 		if($row_1 = mysqli_fetch_array($result_1)){
 			echo "<tr>","<td height='30'>",$row_1['stud_id'],"</td>","<td height='30'>"," ",$row_1['stud_name'],"</td>","<td height='30'>"," ",$row_1['dept_name'],"</td>","<td height='30'>"," ",$row_1['tot_cred'],"</td>"."<p>";
 		}
-		echo "<table style='width: 70%' border='1'><tr><th height='30'>加/退選</th><th height='30'>課號</th><th>課程名稱</th><th>開課系所</th><th>年級</th><th>必/選修別</th><th>目前選修人數</th><th>修課人數上限</th><th>開課時段</th></tr>";
+		echo "<table style='width: 70%' border='1'><tr><th height='30'>加選</th><th height='30'>課號</th><th>課程名稱</th><th>開課系所</th><th>年級</th><th>必/選修別</th><th>目前選修人數</th><th>修課人數上限</th><th>開課時段</th></tr>";
 		
 		$num=0;
 		$course[50]=0;
