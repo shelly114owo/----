@@ -4,6 +4,10 @@
             border: 1px soild black;
             border-collapse: collapse;
         }
+	th{
+            /* border-style: ; */
+            background-color: lightsteelblue;
+        }
     </style>
 
 <?php
