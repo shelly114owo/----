@@ -1,6 +1,6 @@
 # 期中專題——選課系統
 # 操作流程  
-一、環境建置
+一、環境建置  
 1.下載 XAMPP，並安裝
 2.以系統管理員身分執行 XAMPP Control Panel
 3.按下 Apache 和 MySQL 的 Start
