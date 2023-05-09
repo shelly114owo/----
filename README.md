@@ -11,8 +11,13 @@
     主機名稱：localhost  
     密碼：test1234  
 7.賦予使用者 hj 資料庫 testdb 的完整權限  
-8.進入資料庫 testdb 並匯入 website中的testdb.sql  
+8.進入資料庫 testdb 並匯入 website_final中的testdb.sql  
 二、網站  
+1.以系統管理員身分執行 XAMPP Control Panel  
+2.按下 Explorer  
+3.將 website_final中的"完整版" 資料夾放置於 htdocs 資料夾中  
+4.使用瀏覽器訪問 http://localhost/%e5%ae%8c%e6%95%b4%e7%89%88/
+
 ========================  
 # 進度表  
 一、建置資料庫   
