@@ -11,10 +11,10 @@
     主機名稱：localhost  
     密碼：test1234  
 7.賦予使用者 hj 資料庫 testdb 的完整權限  
-8.進入資料庫 testdb 並匯入 database中的sql  
-
+8.進入資料庫 testdb 並匯入 website中的testdb.sql  
+二、
 ========================  
-# 進度表：  
+# 進度表  
 一、建置資料庫   
   
 二、設計網站  
